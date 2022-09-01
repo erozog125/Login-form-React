@@ -1,20 +1,21 @@
 import { Routes, Route } from 'react-router-dom';
-import { Admin } from './components/Admin/Admin';
+import { Home } from './components/Home/Home';
 import { Login } from './components/Login/Login';
-import { NavBar } from './components/NavBar/NavBar';
 import { SignUp } from './components/SignUp/SignUp';
-Routes
+import { NavBar } from './components/NavBar/NavBar';
 
 function App() {
 
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/signup' element={<SignUp />} />
-        <Route path='admin' element={<Admin />} />
-      </Routes>        
+    <NavBar />
+      <div className='bg-zinc-900 text-white text-lg w-screen h-screen flex-col items-center'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />        
+          <Route path='/register' element={<SignUp />} />        
+        </Routes>        
+      </div>    
     </>
   )
 }

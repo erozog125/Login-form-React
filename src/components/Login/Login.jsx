@@ -1,39 +1,16 @@
-import React,{ useState, useEffect } from 'react';
-import {Routes, Route} from 'react-router-dom';
-import { Admin } from '../Admin/Admin';
+import React from 'react';
+
+// https://tailwindcss.com/docs/border-style
 
 export const Login = () => {
 
-  const users = [
-    {username: "edwin.rozo", password:"clave1"},
-    {username: "juan.castro", password:"clave2"},
-    {username: "ana.mora", password:"clave3"},
-    {username: "leandra.suarez", password:"clave4"},
-  ];
-
-  const [isLogin, setIsLogin] = useState(false);
-  const [username, setUserName] = useState('');
-  const [password, setPassword] = useState('');
-
   const handleLogin = (e) => {
-    e.preventDefault();
-    console.log(username);
-    console.log(password);    
-    setIsLogin(users.some( user => user.username === username && user.password === password ));    
+    e.preventDefault();    
   }
 
-  useEffect(() => {
-    console.log(isLogin);
-  }, [isLogin])  
-
   return (
-    <div className='div-signup'>
-      <Routes>
-          <Route path='/' render={()=>{
-            return isLogin ? <Admin /> : null;
-          }}></Route>
-      </Routes>
-      <form action="" onSubmit={handleLogin}>
+    <div className='w-screen flex justify-center items-center'>      
+      <form className='m-10 p-5 w-auto rounded-xl border-double border-2 border-indigo-700 flex flex-col items-center justify-center' action="" onSubmit={handleLogin}>
         <h2>Login</h2>
         <label htmlFor="username">
           <input className='input-username' type="text" id='username' name='username' placeholder="username" onChange={(e)=>setUserName(e.target.value)} />
