@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .form-login {
+    @apply m-10 p-5  w-auto h-96 rounded-xl border-double border-2 border-indigo-700 flex flex-col items-center shadow-lg shadow-cyan-500/50 bg-gray-900
+  }
+
+  .div-navbar {
+    @apply bg-zinc-900 text-white text-lg w-screen h-screen flex-col items-center
+  }
+
+  .div-login {
+    @apply w-screen h-screen flex flex-col justify-center items-center
+  }
+
+  .input-form {
+    @apply text-slate-800 w-full px-4 py-2 mt-2 border rounded-md focus:ring-1 focus:ring-blue-600
+  }
+}

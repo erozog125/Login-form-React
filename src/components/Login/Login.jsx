@@ -1,4 +1,5 @@
 import React from 'react';
+import { BiShowAlt, BiHide } from 'react-icons/bi';
 
 // https://tailwindcss.com/docs/border-style
 
@@ -9,14 +10,18 @@ export const Login = () => {
   }
 
   return (
-    <div className='w-screen flex justify-center items-center'>      
-      <form className='m-10 p-5 w-auto rounded-xl border-double border-2 border-indigo-700 flex flex-col items-center justify-center' action="" onSubmit={handleLogin}>
-        <h2>Login</h2>
+    <div className='div-login'>
+      <BiShowAlt />
+      <BiHide />      
+      <h2 className='font-bold text-cyan-500 text-7xl'>Login</h2>
+      <form className='form-login' action="" onSubmit={handleLogin}>
         <label htmlFor="username">
-          <input className='input-username' type="text" id='username' name='username' placeholder="username" onChange={(e)=>setUserName(e.target.value)} />
+          <input className='input-form' type="text" id='username' name='username' placeholder="username" onChange={(e)=>setUserName(e.target.value)} />
         </label>
         <label htmlFor="password">
-          <input id='password' className='input-password' type="password" name='password' placeholder="password" onChange={(e)=>setPassword(e.target.value)} />
+          <div className="pass">
+            <input type="text" />
+          </div>
         </label>        
         <button className='btn-login'>Login</button>
       </form>

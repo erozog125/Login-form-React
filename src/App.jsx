@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <NavBar />
-      <div className='bg-zinc-900 text-white text-lg w-screen h-screen flex-col items-center'>
+      <div className='div-navbar'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />        
